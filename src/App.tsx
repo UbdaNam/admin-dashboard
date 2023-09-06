@@ -3,6 +3,7 @@ import Home from "./pages/home/Home";
 import Users from "./pages/users/Users";
 import Products from "./pages/products/Products";
 import Layout from "./layout/Layout";
+import "./styles/global.scss";
 
 function App() {
   const router = createBrowserRouter([
