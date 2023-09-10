@@ -21,7 +21,7 @@ const NavBar = () => {
         <AiOutlineExpand />
         <div className="notification">
           <IoNotificationsOutline />
-          <span>1</span>
+          <span className="flex-center">1</span>
         </div>
         <div className="user">
           <AiOutlineUser />
