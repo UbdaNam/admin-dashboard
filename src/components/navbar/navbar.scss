@@ -1,2 +1,41 @@
-.nav {
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+
+  .logo {
+    img {
+      width: 40px;
+    }
+  }
+
+  .links {
+    gap: 1.3rem;
+
+    svg {
+      font-size: 24px;
+    }
+    .notification {
+      position: relative;
+
+      span {
+        position: absolute;
+        background-color: rgb(242, 9, 9);
+        color: #fff;
+        top: -10px;
+        right: -10px;
+        width: 16px;
+        height: 16px;
+        font-size: 13px;
+        border-radius: 50%;
+      }
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
 }
