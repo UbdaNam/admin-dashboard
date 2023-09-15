@@ -5,12 +5,6 @@
   padding: 1.5rem;
 
   span {
-    &:first-child {
-      font-weight: bold;
-    }
-
-    &:last-child {
-      font-size: 14px;
-    }
+    font-size: 14px;
   }
 }

@@ -1,2 +1,29 @@
+@import "../../styles/variables.scss";
+
 .menu {
+  .item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+
+    .list-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.5rem;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: $soft-bg;
+        justify-content: center;
+      }
+    }
+  }
+
+  .title {
+    font-size: 13px;
+    font-weight: 200;
+    color: $soft-color;
+  }
 }
