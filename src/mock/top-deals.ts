@@ -8,7 +8,7 @@ interface User {
   amount: string;
 }
 
-const topDealUsers: User[] = new Array(10).fill({}).map(() => ({
+const topDealUsers: User[] = new Array(7).fill({}).map(() => ({
   id: parseInt(faker.string.numeric(10)),
   name: faker.person.fullName(),
   email: faker.internet.email(),
