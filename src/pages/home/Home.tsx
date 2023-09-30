@@ -1,3 +1,4 @@
+import BarChartBox from "../../components/barChart/BarChart";
 import ChartBox from "../../components/chartBox/ChartBox";
 import TopDeals from "../../components/topDeals/TopDeals";
 import chartUser from "../../mock/chart-data";
@@ -23,8 +24,12 @@ const Home = () => {
         <ChartBox chartData={chartUser[3]} title="Total Revenue" />
       </div>
       <div className="box box7">Box7</div>
-      <div className="box box8">Box8</div>
-      <div className="box box9">Box9</div>
+      <div className="box box8">
+        <BarChartBox />
+      </div>
+      <div className="box box9">
+        <BarChartBox />
+      </div>
     </div>
   );
 };
