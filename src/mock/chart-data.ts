@@ -2,21 +2,34 @@ import { faker } from "@faker-js/faker";
 import { IconType } from "react-icons";
 import { BiSolidUserBadge } from "react-icons/bi";
 
-type dayData = {
+type dayDataType = {
   name: string;
   users: number;
 };
 
-export interface chartUserData {
+type barChartDayDataType = {
+  name: string;
+  profit?: number;
+  visit?: number;
+};
+
+export interface chartUserDataType {
   color: string;
   icon: IconType;
   number: number | string;
   dataKey: string;
   percentage: number;
-  chartData: dayData[];
+  chartData: dayDataType[];
 }
 
-const chartUser: chartUserData[] = new Array(4).fill({}).map(() => ({
+export interface barChartDataType {
+  title: string;
+  color: string;
+  dataKey: string;
+  chartData: barChartDayDataType[];
+}
+
+const chartUser: chartUserDataType[] = new Array(4).fill({}).map(() => ({
   color: faker.color.rgb({ casing: "upper" }),
   icon: BiSolidUserBadge,
   number:
@@ -36,49 +49,76 @@ const chartUser: chartUserData[] = new Array(4).fill({}).map(() => ({
   ],
 }));
 
-export const barChartData = [
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
+export const barChartRevenueData: barChartDataType = {
+  title: "Profit Earned",
+  color: "#8884d8",
+  dataKey: "profit",
+  chartData: [
+    {
+      name: "Sun",
+      profit: faker.datatype.number({ min: 1000, max: 9999 }),
+    },
+    {
+      name: "Mon",
+      profit: faker.datatype.number({ min: 1000, max: 9999 }),
+    },
+    {
+      name: "Tue",
+      profit: faker.datatype.number({ min: 1000, max: 9999 }),
+    },
+    {
+      name: "Wed",
+      profit: faker.datatype.number({ min: 1000, max: 9999 }),
+    },
+    {
+      name: "Thu",
+      profit: faker.datatype.number({ min: 1000, max: 9999 }),
+    },
+    {
+      name: "Fri",
+      profit: faker.datatype.number({ min: 1000, max: 9999 }),
+    },
+    {
+      name: "Sat",
+      profit: faker.datatype.number({ min: 1000, max: 9999 }),
+    },
+  ],
+};
+
+export const barChartVisitData: barChartDataType = {
+  title: "Total Visit",
+  color: "#FF8042",
+  dataKey: "visit",
+  chartData: [
+    {
+      name: "Sun",
+      visit: faker.datatype.number({ min: 1000, max: 9999 }),
+    },
+    {
+      name: "Mon",
+      visit: faker.datatype.number({ min: 1000, max: 9999 }),
+    },
+    {
+      name: "Tue",
+      visit: faker.datatype.number({ min: 1000, max: 9999 }),
+    },
+    {
+      name: "Wed",
+      visit: faker.datatype.number({ min: 1000, max: 9999 }),
+    },
+    {
+      name: "Thu",
+      visit: faker.datatype.number({ min: 1000, max: 9999 }),
+    },
+    {
+      name: "Fri",
+      visit: faker.datatype.number({ min: 1000, max: 9999 }),
+    },
+    {
+      name: "Sat",
+      visit: faker.datatype.number({ min: 1000, max: 9999 }),
+    },
+  ],
+};
 
 export default chartUser;
