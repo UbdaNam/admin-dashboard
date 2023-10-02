@@ -1,7 +1,10 @@
 import BarChartBox from "../../components/barChart/BarChart";
 import ChartBox from "../../components/chartBox/ChartBox";
 import TopDeals from "../../components/topDeals/TopDeals";
-import chartUser from "../../mock/chart-data";
+import chartUser, {
+  barChartRevenueData,
+  barChartVisitData,
+} from "../../mock/chart-data";
 import "./home.scss";
 
 const Home = () => {
@@ -25,10 +28,10 @@ const Home = () => {
       </div>
       <div className="box box7">Box7</div>
       <div className="box box8">
-        <BarChartBox />
+        <BarChartBox chartData={barChartRevenueData} />
       </div>
       <div className="box box9">
-        <BarChartBox />
+        <BarChartBox chartData={barChartVisitData} />
       </div>
     </div>
   );

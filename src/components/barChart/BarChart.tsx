@@ -1,14 +1,14 @@
 import { ResponsiveContainer, BarChart, Bar, Tooltip } from "recharts";
+import { barChartDataType } from "../../mock/chart-data";
 import "./bar-chart.scss";
-import { barChartData } from "../../mock/chart-data";
 
-const BarChartBox = () => {
+const BarChartBox = ({ chartData }: { chartData: barChartDataType }) => {
   return (
     <div className="bar-chart-wrappper">
-      <h2>Title</h2>
+      <h2>{chartData.title}</h2>
       <div className="bar-chart">
         <ResponsiveContainer width="99%" height={150}>
-          <BarChart data={barChartData}>
+          <BarChart data={chartData.chartData}>
             <Tooltip
               contentStyle={{
                 backgroundColor: "#2a3447",
@@ -18,7 +18,7 @@ const BarChartBox = () => {
               labelStyle={{ display: "none" }}
               cursor={{ fill: "none" }}
             />
-            <Bar dataKey="uv" fill="#8884d8" />
+            <Bar dataKey={chartData.dataKey} fill={chartData.color} />
           </BarChart>
         </ResponsiveContainer>
       </div>
