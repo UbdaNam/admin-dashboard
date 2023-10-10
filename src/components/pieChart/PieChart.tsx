@@ -1,13 +1,8 @@
 import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 import "./pie-chars.scss";
+import data from "../../mock/pie-chart-data";
 
 const PieChartBox = () => {
-  const data = [
-    { name: "Desktop", value: 400, color: "#0088fe" },
-    { name: "Mobile", value: 300, color: "#00c49f" },
-    { name: "Laptop", value: 300, color: "#ffbb28" },
-    { name: "Tablet", value: 200, color: "#ff8042" },
-  ];
   return (
     <div className="pie-chart-wrapper">
       <h2>Leads by Source</h2>
