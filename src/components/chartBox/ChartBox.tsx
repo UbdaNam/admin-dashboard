@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
 import "./chart-box.scss";
 import { Line, LineChart, ResponsiveContainer, Tooltip } from "recharts";
-import { chartUserData } from "../../mock/chart-data";
+import { chartUserDataType } from "../../mock/chart-data";
 
 interface Props {
-  chartData: chartUserData;
+  chartData: chartUserDataType;
   title: string;
 }
 
 const ChartBox = ({ chartData, title }: Props) => {
-  console.log(chartData);
   return (
     <div className="chart-box">
       <div className="box-info">
