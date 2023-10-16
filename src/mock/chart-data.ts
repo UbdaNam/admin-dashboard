@@ -4,7 +4,7 @@ import { BiSolidUserBadge } from "react-icons/bi";
 
 type dayDataType = {
   name: string;
-  users: number;
+  [key: string]: number | string;
 };
 
 type barChartDayDataType = {
@@ -29,23 +29,25 @@ export interface barChartDataType {
   chartData: barChartDayDataType[];
 }
 
-const chartUser: chartUserDataType[] = new Array(4).fill({}).map(() => ({
+const data: string[] = ["Users", "Products", "Ratio", "Revenue"];
+
+const chartUser: chartUserDataType[] = new Array(4).fill({}).map((_, i) => ({
   color: faker.color.rgb({ casing: "upper" }),
   icon: BiSolidUserBadge,
   number:
     Math.random() < 0.5
       ? faker.datatype.number({ min: 1, max: 100 })
       : faker.datatype.number({ min: 0, max: 100, precision: 0.01 }),
-  dataKey: "users",
+  dataKey: data[i],
   percentage: faker.number.int({ min: -100, max: 100 }),
   chartData: [
-    { name: "Sun", users: faker.number.int(100) },
-    { name: "Mon", users: faker.number.int(100) },
-    { name: "Tue", users: faker.number.int(100) },
-    { name: "Wed", users: faker.number.int(100) },
-    { name: "Thu", users: faker.number.int(100) },
-    { name: "Fri", users: faker.number.int(100) },
-    { name: "Sat", users: faker.number.int(100) },
+    { name: "Sun", [data[i]]: faker.number.int(100) },
+    { name: "Mon", [data[i]]: faker.number.int(100) },
+    { name: "Tue", [data[i]]: faker.number.int(100) },
+    { name: "Wed", [data[i]]: faker.number.int(100) },
+    { name: "Thu", [data[i]]: faker.number.int(100) },
+    { name: "Fri", [data[i]]: faker.number.int(100) },
+    { name: "Sat", [data[i]]: faker.number.int(100) },
   ],
 }));
 
