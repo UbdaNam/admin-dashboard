@@ -1,8 +1,8 @@
 import { ResponsiveContainer, BarChart, Bar, Tooltip } from 'recharts';
-import { barChartDataType } from '../../mock/chart-data';
+import { BarChartDataType } from '../../mock/chart-data';
 import './bar-chart.scss';
 
-const BarChartBox = ({ chartData }: { chartData: barChartDataType }) => {
+const BarChartBox = ({ chartData }: { chartData: BarChartDataType }) => {
   return (
     <div className='bar-chart-wrappper'>
       <h2>{chartData.title}</h2>
