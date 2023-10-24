@@ -1,6 +1,6 @@
 .top-deals {
   h1 {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
 
   .list {
@@ -10,6 +10,10 @@
       justify-content: space-between;
       gap: 10px;
       margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
 
       .user {
         display: flex;

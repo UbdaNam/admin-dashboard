@@ -1,38 +1,38 @@
-import { faker } from "@faker-js/faker";
-import { IconType } from "react-icons";
-import { BiSolidUserBadge } from "react-icons/bi";
+import { faker } from '@faker-js/faker';
+import { IconType } from 'react-icons';
+import { BiSolidUserBadge } from 'react-icons/bi';
 
-type dayDataType = {
+type DayDataType = {
   name: string;
   [key: string]: number | string;
 };
 
-type barChartDayDataType = {
+type BarChartDayDataType = {
   name: string;
   profit?: number;
   visit?: number;
 };
 
-export interface chartUserDataType {
+export interface ChartUserDataType {
   color: string;
   icon: IconType;
   number: number | string;
   dataKey: string;
   percentage: number;
-  chartData: dayDataType[];
+  chartData: DayDataType[];
 }
 
-export interface barChartDataType {
+export interface BarChartDataType {
   title: string;
   color: string;
   dataKey: string;
-  chartData: barChartDayDataType[];
+  chartData: BarChartDayDataType[];
 }
 
-const data: string[] = ["Users", "Products", "Ratio", "Revenue"];
+const data: string[] = ['Users', 'Products', 'Ratio', 'Revenue'];
 
-const chartUser: chartUserDataType[] = new Array(4).fill({}).map((_, i) => ({
-  color: faker.color.rgb({ casing: "upper" }),
+const chartUser: ChartUserDataType[] = new Array(4).fill({}).map((_, i) => ({
+  color: faker.color.rgb({ casing: 'upper' }),
   icon: BiSolidUserBadge,
   number:
     Math.random() < 0.5
@@ -41,83 +41,83 @@ const chartUser: chartUserDataType[] = new Array(4).fill({}).map((_, i) => ({
   dataKey: data[i],
   percentage: faker.number.int({ min: -100, max: 100 }),
   chartData: [
-    { name: "Sun", [data[i]]: faker.number.int(100) },
-    { name: "Mon", [data[i]]: faker.number.int(100) },
-    { name: "Tue", [data[i]]: faker.number.int(100) },
-    { name: "Wed", [data[i]]: faker.number.int(100) },
-    { name: "Thu", [data[i]]: faker.number.int(100) },
-    { name: "Fri", [data[i]]: faker.number.int(100) },
-    { name: "Sat", [data[i]]: faker.number.int(100) },
+    { name: 'Sun', [data[i]]: faker.number.int(100) },
+    { name: 'Mon', [data[i]]: faker.number.int(100) },
+    { name: 'Tue', [data[i]]: faker.number.int(100) },
+    { name: 'Wed', [data[i]]: faker.number.int(100) },
+    { name: 'Thu', [data[i]]: faker.number.int(100) },
+    { name: 'Fri', [data[i]]: faker.number.int(100) },
+    { name: 'Sat', [data[i]]: faker.number.int(100) },
   ],
 }));
 
-export const barChartRevenueData: barChartDataType = {
-  title: "Profit Earned",
-  color: "#8884d8",
-  dataKey: "profit",
+export const barChartRevenueData: BarChartDataType = {
+  title: 'Profit Earned',
+  color: '#8884d8',
+  dataKey: 'profit',
   chartData: [
     {
-      name: "Sun",
+      name: 'Sun',
       profit: faker.datatype.number({ min: 1000, max: 9999 }),
     },
     {
-      name: "Mon",
+      name: 'Mon',
       profit: faker.datatype.number({ min: 1000, max: 9999 }),
     },
     {
-      name: "Tue",
+      name: 'Tue',
       profit: faker.datatype.number({ min: 1000, max: 9999 }),
     },
     {
-      name: "Wed",
+      name: 'Wed',
       profit: faker.datatype.number({ min: 1000, max: 9999 }),
     },
     {
-      name: "Thu",
+      name: 'Thu',
       profit: faker.datatype.number({ min: 1000, max: 9999 }),
     },
     {
-      name: "Fri",
+      name: 'Fri',
       profit: faker.datatype.number({ min: 1000, max: 9999 }),
     },
     {
-      name: "Sat",
+      name: 'Sat',
       profit: faker.datatype.number({ min: 1000, max: 9999 }),
     },
   ],
 };
 
-export const barChartVisitData: barChartDataType = {
-  title: "Total Visit",
-  color: "#FF8042",
-  dataKey: "visit",
+export const barChartVisitData: BarChartDataType = {
+  title: 'Total Visit',
+  color: '#FF8042',
+  dataKey: 'visit',
   chartData: [
     {
-      name: "Sun",
+      name: 'Sun',
       visit: faker.datatype.number({ min: 1000, max: 9999 }),
     },
     {
-      name: "Mon",
+      name: 'Mon',
       visit: faker.datatype.number({ min: 1000, max: 9999 }),
     },
     {
-      name: "Tue",
+      name: 'Tue',
       visit: faker.datatype.number({ min: 1000, max: 9999 }),
     },
     {
-      name: "Wed",
+      name: 'Wed',
       visit: faker.datatype.number({ min: 1000, max: 9999 }),
     },
     {
-      name: "Thu",
+      name: 'Thu',
       visit: faker.datatype.number({ min: 1000, max: 9999 }),
     },
     {
-      name: "Fri",
+      name: 'Fri',
       visit: faker.datatype.number({ min: 1000, max: 9999 }),
     },
     {
-      name: "Sat",
+      name: 'Sat',
       visit: faker.datatype.number({ min: 1000, max: 9999 }),
     },
   ],
