@@ -1,0 +1,37 @@
+.data-table-container {
+  .data-table {
+    background-color: #fff;
+    padding: 20px;
+
+    .MuiDataGrid-toolbarContainer {
+      flex-direction: row-reverse;
+    }
+
+    img {
+      widows: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .action {
+      gap: 15px;
+
+      .view,
+      .delete {
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .view {
+        color: #167b16;
+      }
+
+      .delete {
+        border: none;
+        background: transparent;
+        color: #dd2e2e;
+      }
+    }
+  }
+}
