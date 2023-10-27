@@ -62,7 +62,7 @@ const Users = () => {
         <h1>Users</h1>
         <button>Add New User</button>
       </div>
-      <DataGridTable columns={columns} rows={usersRows} />
+      <DataGridTable columns={columns} rows={usersRows} slug='users' />
     </div>
   );
 };
