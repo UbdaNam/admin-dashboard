@@ -6,8 +6,12 @@ import {
 } from '@mui/x-data-grid/models';
 import './users.scss';
 import { usersRows } from '../../mock/user-data';
+import { useState } from 'react';
+import CreateForm from '../../components/createForm/CreateForm';
 
 const Users = () => {
+  const [open, setOpen] = useState(false);
+
   const columns: GridColDef[] = [
     { field: 'id', headerName: 'ID', width: 90 },
     {
@@ -63,6 +67,7 @@ const Users = () => {
         <button>Add New User</button>
       </div>
       <DataGridTable columns={columns} rows={usersRows} slug='users' />
+      {open && <CreateForm columns={columns} slug='users' setOpen={setOpen} />}
     </div>
   );
 };
