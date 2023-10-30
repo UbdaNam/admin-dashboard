@@ -6,63 +6,71 @@ import {
 } from '@mui/x-data-grid/models';
 import './users.scss';
 import { usersRows } from '../../mock/user-data';
+import { useState } from 'react';
+import CreateForm from '../../components/createForm/CreateForm';
 
 const Users = () => {
+  const [open, setOpen] = useState(false);
+
   const columns: GridColDef[] = [
     { field: 'id', headerName: 'ID', width: 90 },
     {
-      field: 'avatar',
+      field: 'img',
       headerName: 'Avatar',
       width: 100,
-      renderCell: (params: GridRenderCellParams) => {
-        return (
-          <img src={params.row.avatar} alt={params.row.firstName + ' avatar'} />
-        );
+      renderCell: (params) => {
+        return <img src={params.row.img || '/noavatar.png'} alt='' />;
       },
     },
     {
-      field: 'status',
-      headerName: 'Status',
-      width: 150,
-      type: 'boolean',
-    },
-    {
       field: 'firstName',
+      type: 'string',
       headerName: 'First name',
-      width: 150,
-      editable: true,
+      width: 120,
     },
     {
       field: 'lastName',
+      type: 'string',
       headerName: 'Last name',
+      width: 120,
+    },
+    {
+      field: 'email',
+      type: 'string',
+      headerName: 'Email',
       width: 150,
-      editable: true,
     },
     {
-      field: 'age',
-      headerName: 'Age',
-      type: 'number',
-      width: 110,
-      editable: true,
+      field: 'phone',
+      type: 'string',
+      headerName: 'Phone',
+      width: 200,
     },
     {
-      field: 'fullName',
-      headerName: 'Full name',
-      description: 'This column has a value getter and is not sortable.',
-      sortable: false,
-      width: 160,
-      valueGetter: (params: GridValueGetterParams) =>
-        `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+      field: 'createdAt',
+      headerName: 'Created At',
+      width: 200,
+      type: 'string',
+    },
+    {
+      field: 'verified',
+      headerName: 'Verified',
+      width: 120,
+      type: 'boolean',
     },
   ];
 
+  const handleOpen = () => {
+    setOpen(true);
+  };
   return (
     <div className='users'>
       <div className='header'>
         <h1>Users</h1>
-        <button>Add New User</button>
+        <button onClick={handleOpen}>Add New User</button>
       </div>
       <DataGridTable columns={columns} rows={usersRows} slug='users' />
+      {open && <CreateForm columns={columns} slug='user' setOpen={setOpen} />}
     </div>
   );
 };
