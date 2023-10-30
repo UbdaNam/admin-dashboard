@@ -8,11 +8,32 @@ interface CreateFormPropTypes {
 }
 
 const CreateForm = ({ slug, columns, setOpen }: CreateFormPropTypes) => {
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
-    <div className='create-form'>
+    <div className='create-form flex-center'>
       <div className='modal'>
-        <span className='close'>X</span>
+        <button className='close' onClick={handleClose}>
+          X
+        </button>
         <h1>Add new {slug}</h1>
+        <form onSubmit={handleSubmit}>
+          {columns
+            .filter((column) => column.field !== 'id' && column.field !== 'img')
+            .map((column) => (
+              <div className='item'>
+                <label>{column.headerName}</label>
+                <input type={column.type} placeholder={column.field} />
+              </div>
+            ))}
+          <button>Submit</button>
+        </form>
       </div>
     </div>
   );
