@@ -1,11 +1,7 @@
 import DataGridTable from '../../components/dataGridTable/DataGridTable';
-import {
-  GridColDef,
-  GridValueGetterParams,
-  GridRenderCellParams,
-} from '@mui/x-data-grid/models';
+import { GridColDef } from '@mui/x-data-grid/models';
 import './users.scss';
-import { usersRows } from '../../mock/user-data';
+import { userRows } from '../../mock/user-data';
 import { useState } from 'react';
 import CreateForm from '../../components/createForm/CreateForm';
 
@@ -69,7 +65,7 @@ const Users = () => {
         <h1>Users</h1>
         <button onClick={handleOpen}>Add New User</button>
       </div>
-      <DataGridTable columns={columns} rows={usersRows} slug='users' />
+      <DataGridTable columns={columns} rows={userRows} slug='users' />
       {open && <CreateForm columns={columns} slug='user' setOpen={setOpen} />}
     </div>
   );
