@@ -62,6 +62,7 @@ const Details = (props: Props) => {
                 {props.chart.dataKeys.map((dataKey) => (
                   <Line
                     type='monotone'
+                    key={dataKey.name}
                     dataKey={dataKey.name}
                     stroke={dataKey.color}
                   />
@@ -75,8 +76,8 @@ const Details = (props: Props) => {
         <h2>Latest Activities</h2>
         {props.activities && (
           <ul>
-            {props.activities.map((activity) => (
-              <li key={activity.text}>
+            {props.activities.map((activity, index) => (
+              <li key={index}>
                 <div>
                   <p>{activity.text}</p>
                   <time>{activity.time}</time>
