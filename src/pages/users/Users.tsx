@@ -34,18 +34,18 @@ const Users = () => {
       field: 'email',
       type: 'string',
       headerName: 'Email',
-      width: 150,
+      width: 170,
     },
     {
       field: 'phone',
       type: 'string',
       headerName: 'Phone',
-      width: 200,
+      width: 150,
     },
     {
       field: 'createdAt',
       headerName: 'Created At',
-      width: 200,
+      width: 120,
       type: 'string',
     },
     {

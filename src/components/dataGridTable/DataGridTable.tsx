@@ -16,7 +16,7 @@ const DataGridTable = ({ rows, columns, slug }: DataGridPropType) => {
   const actionColumn: GridColDef = {
     field: 'actions',
     headerName: 'Actions',
-    width: 200,
+    width: 150,
     renderCell: (params: GridRenderCellParams) => {
       return (
         <div className='action flex-center'>

@@ -55,7 +55,7 @@ The Admin Dashboard Project is a tool designed to help manage users, products, o
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Coming soon]('./')
+- [Live Demo Link](https://admin-dashboard-aitg.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
