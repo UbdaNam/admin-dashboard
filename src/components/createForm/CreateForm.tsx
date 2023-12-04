@@ -12,7 +12,7 @@ const CreateForm = ({ slug, columns, setOpen }: CreateFormPropTypes) => {
     setOpen(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
 
@@ -27,7 +27,7 @@ const CreateForm = ({ slug, columns, setOpen }: CreateFormPropTypes) => {
           {columns
             .filter((column) => column.field !== 'id' && column.field !== 'img')
             .map((column) => (
-              <div className='item'>
+              <div className='item' key={column.headerName}>
                 <label>{column.headerName}</label>
                 <input type={column.type} placeholder={column.field} />
               </div>
