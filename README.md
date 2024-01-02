@@ -25,7 +25,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 World-Atlas <a name="about-project">
+# 📖 Admin-Dashboard <a name="about-project">
 
 Hi there! Welcome to Admin-Dashboard project</a>
 
