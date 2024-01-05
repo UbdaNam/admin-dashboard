@@ -29,7 +29,7 @@
 
 Hi there! Welcome to Admin-Dashboard project</a>
 
-The Admin Dashboard Project is a tool designed to help manage users, products, orders, posts, forms, and calendars. The dashboard includes data presentation charts to help visualize the information and make it easier to understand and track
+The Admin Dashboard Project is a tool designed to help manage users, products, orders, posts, forms, and calendars. The dashboard includes data presentation charts to help visualize the information and make it easier to understand and track user data.
 
 ## 🛠 Built With <a name="built-with"></a>
 
