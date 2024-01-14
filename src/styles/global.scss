@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import './variables.scss';
+@import './responsive.scss';
 
 * {
   margin: 0;
@@ -26,10 +27,14 @@ a {
   width: 220px;
   padding: 5px 20px;
   border-right: 2px solid $soft-bg;
+
+  @include lg {
+    width: max-content;
+  }
 }
 
 .content-container {
-  flex: 1;
+  width: 90%;
   padding: 5px 20px;
 }
 
