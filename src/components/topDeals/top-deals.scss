@@ -1,6 +1,12 @@
+@import '../../styles/responsive.scss';
+
 .top-deals {
   h1 {
     margin-bottom: 25px;
+
+    @include xxl {
+      font-size: 24px;
+    }
   }
 
   .list {
@@ -24,6 +30,14 @@
           height: 40px;
           border-radius: 50%;
           object-fit: cover;
+
+          @include xxl {
+            display: none;
+          }
+
+          @include md {
+            display: block;
+          }
         }
 
         .user-details {
@@ -38,6 +52,18 @@
 
           .email {
             font-size: 12px;
+
+            @include xxl {
+              display: none;
+            }
+
+            @include md {
+              display: block;
+            }
+
+            @include sm {
+              display: none;
+            }
           }
 
           .amount {

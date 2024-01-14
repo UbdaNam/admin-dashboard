@@ -63,7 +63,7 @@ const Products = () => {
     <div className='products'>
       <div className='header'>
         <h1>Products</h1>
-        <button onClick={handleOpen}>Add New User</button>
+        <button onClick={handleOpen}>Add New Product</button>
       </div>
       <DataGridTable columns={columns} rows={productRows} slug='products' />
       {open && (

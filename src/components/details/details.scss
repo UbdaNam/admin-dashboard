@@ -1,7 +1,13 @@
+@import '../../styles/responsive.scss';
+
 .details-wrapper {
   display: flex;
   gap: 20px;
 
+  @include xl {
+    flex-direction: column;
+    gap: 50px;
+  }
   .view {
     flex: 1;
 
@@ -13,13 +19,22 @@
 
         img {
           width: 100px;
-          height: 100px;
+          aspect-ratio: 1 / 1;
           border-radius: 20px;
           object-fit: cover;
+
+          @include sm {
+            width: 70px;
+            aspect-ratio: 1 / 1;
+          }
         }
 
         h1 {
           font-weight: 500;
+
+          @include md {
+            font-size: 24px;
+          }
         }
       }
       .details {
@@ -42,12 +57,20 @@
       height: 0;
       border: 0.5px solid gray;
       margin: 20px 0px;
+
+      @include md {
+        display: none;
+      }
     }
 
     .chart {
       margin-top: 50px;
       width: 80%;
       height: 400px;
+
+      @include md {
+        display: none;
+      }
     }
   }
   .activities {
@@ -83,6 +106,10 @@
           min-width: 480px;
           padding: 15px;
           background-color: #f45b6810;
+
+          @include md {
+            min-width: 250px;
+          }
 
           p {
             margin-bottom: 5px;
